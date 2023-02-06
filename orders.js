@@ -36,10 +36,12 @@ class Ticket {
         this.items = items;
         this.orderTime = orderTime;
         this.customerId = customerId;
-        this.status = 'queued'
+        
+        this.status = "queued";
     }
     updateStatus (newStatus){
         console.log(`The order for customer ${this.customerId} is now ${this.status}.`)
+
     }
    
 }
@@ -61,7 +63,7 @@ class Ticket {
 
 //CODE HERE
 
-let firstTicket  
+let firstTicket = new Ticket (["pizza","bread","soda"],"7:03PM")
 
 
 
@@ -74,3 +76,7 @@ let firstTicket
 */
 
 //CODE HERE
+
+
+firstTicket(("cooking"))
+console.assert.og(firstTicket)
