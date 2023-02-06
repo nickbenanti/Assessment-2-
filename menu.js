@@ -76,10 +76,9 @@ console.log(pizza.tags[1])
 
 //CODE HERE
 
-pizza.price = 100
+let { price }   = pizza 
 
-console.log(pizza.price)
-
+console.log(price)
 
 
 /*
@@ -90,10 +89,8 @@ console.log(pizza.price)
 */
 
 //CODE HERE
-
-pizza.category = 'want'
-
-console.log(pizza.category)
+let { category} = pizza 
+console.log(category)
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -162,9 +159,13 @@ foodArr =[
 
 //CODE HERE
 
-const filteredFood = foodArr.filter(function(callback){
-    return callback.tags === 'pizza'
-})
+// const filteredFood = foodArr.filter(function(callback){
+//     return callback.tags === 'pizza'
+// })
+
+
+
+const filteredFood = foodArr.filter((pizzaObj) => pizzaObj.tags.includes('pizza'))
 
 console.log(filteredFood)
 
@@ -210,6 +211,18 @@ console.log(filteredFood)
 //CODE HERE
 
 
+const filterByProperty = (property,number,type) => {
+    let filteredArr = foodArr.filter((pizzaObj)=>{
+        if(type === 'below'){
+            return pizzaObj[property] < number
+        }else {
+            return pizzaObj[property] > number
+        }
+    })
+    return filteredArr
+}
+
+
 /*
     Invoke the `filterByProperty` function passing
     in a value for each paramter.
@@ -218,3 +231,6 @@ console.log(filteredFood)
 */
 
 //CODE HERE
+
+console.log(filterByProperty("price", 10, 'below'))
+
