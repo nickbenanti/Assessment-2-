@@ -27,10 +27,10 @@ class Employee{
         this.shifts = shifts;
     }
     getSchedule() {
-        console.log(`${this.name} works on ${this.shifts}`)
-        }
+        return `${this.name} works on ${this.shifts}`
+        
 } 
-
+}
 
 
 
@@ -49,7 +49,7 @@ class Employee{
 
 //CODE HERE
 
-let empOne = new Employee('Jess', 'weekday mornings, weekday afternoons')
+let empOne = new Employee('Jess', ['weekday mornings, weekday afternoons'])
 
 
 /*
@@ -60,7 +60,7 @@ let empOne = new Employee('Jess', 'weekday mornings, weekday afternoons')
 //CODE HERE
 
 
-empOne.getSchedule()
+console.log(empOne.getSchedule())
 
 
 
@@ -78,10 +78,9 @@ empOne.getSchedule()
 
 //CODE HERE
 
-let empTwo = {...empOne};
-let nick = empTwo = new Employee(`Nick`, `All day ,Every day`) 
+let empTwo = {...empOne,name: "Nick"};
 
-nick.getSchedule()
+console.log(empTwo)
 
 //////////////////PROBLEM 2////////////////////
 /*  
@@ -114,11 +113,11 @@ class Manager extends Employee {
         this.employees = employees
     }
     getEmployees(){
-        console.log(`${this.name} manages ${this.employees}`)
+        return `${this.name} manages ${this.employees}`
     }
     
     addEmployee(emp){
-        this.employees = emp 
+        this.employees.push(emp)
     }
 }
 
@@ -141,7 +140,7 @@ class Manager extends Employee {
 
 //CODE HERE
 
-let manager = new Manager (`Winston`,`weekday mornings, weekday afternoons`, `Cece and Schmidt`)
+let manager = new Manager (`Winston`,[`weekday mornings, weekday afternoons`], [`Cece and Schmidt`])
 
 
 
@@ -152,7 +151,7 @@ let manager = new Manager (`Winston`,`weekday mornings, weekday afternoons`, `Ce
 */
 
 //CODE HERE
-manager.getEmployees()
+console.log(manager.getEmployees())
 
 
 /*
@@ -177,4 +176,4 @@ manager.addEmployee('Coach')
 //CODE HERE
 
 
-manager.getEmployees()
+console.log(manager.getEmployees())
